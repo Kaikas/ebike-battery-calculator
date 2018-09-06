@@ -1,0 +1,39 @@
+
+<form>
+  <div class="form-group">
+    <label for="distance">Distance [km]</label>
+    <input type="number" class="form-control" min="0" id="distance" value="40" required #distance>
+  </div>
+  <div class="form-group">
+    <label for="time">Total time needed [min]</label>
+    <input type="number" class="form-control" min="0" id="time" value="120" required #time>
+  </div>
+  <div class="form-group">
+    <label for="height_difference">Height Difference [m]</label>
+    <input type="number" class="form-control" min="0" id="height_difference" value="300" required #height_difference>
+  </div>
+  <div class="form-group">
+    <label for="weight_person" id="weight_person">Weight Person [kg]</label>
+    <input type="number" class="form-control" min="0" id="weight_person" value="80" required #weight_person>
+  </div>
+  <div class="form-group">
+    <label for="weight_ebike">Weight Ebike [kg]</label>
+    <input type="number" class="form-control" min="0" id="weight_ebike" value="20" required #weight_ebike>
+  </div>
+  <div class="form-group">
+    <label for="rolling_resistance_coefficient">Rolling Resistance Coefficient</label>
+    <input type="number" step="0.01" class="form-control" min="0" id="rolling_resistance_coefficient" value="0.05" required #rolling_resistance_coefficient>
+  </div>
+  <div class="form-group">
+    <label for="watt_cyclist">Watt Cyclist [W]</label>
+    <input type="number" class="form-control" min="0" id="watt_cyclist" value="100" required #watt_cyclist>
+  </div>
+  <div class="form-group">
+    <label for="watt_battery">Watt hours battery [Wh]</label>
+    <input type="number" class="form-control" min="0" id="watt_battery" value="500" required #watt_battery>
+  </div>
+</form>
+<br />
+<button (click)="calculateBattery(distance.value, time.value, height_difference.value, weight_person.value, weight_ebike.value, rolling_resistance_coefficient.value, watt_cyclist.value, watt_battery.value)">Update</button>
+<br />
+<i class="material-icons">battery_std</i><b>{{ result }}</b>%
